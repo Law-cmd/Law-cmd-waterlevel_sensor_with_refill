@@ -3,32 +3,8 @@
 #include <LiquidCrystal_I2C.h>
 
 
-byte waterdrop[8] =
-{
-0b00000,
-0b00100,
-0b01110,
-0b11111,
-0b11111,
-0b11111,
-0b01110,
-0b00000
-};
-byte smile[8] =
-{
-0b00000,
-0b00000,
-0b01010,
-0b00000,
-0b10001,
-0b01110,
-0b00000,
-0b00000
-};
 
-
-
-#define sensorPower 10  //watersensor
+#define sensorPower 7  //watersensor
 Servo servo; int angle;//servo
 /*funktionen*/
 int readSensor();
@@ -44,8 +20,6 @@ LiquidCrystal_I2C lcd(0x27,16,2);  // set the LCD address to 0x3F for a 16 chars
 
 void setup() 
 {
-  lcd.createChar(0, waterdrop);
-  lcd.createChar(1, smile);
   lcd.init();
   lcd.clear();         
   lcd.backlight();   
@@ -72,9 +46,8 @@ void loop()
      lcd.setCursor(2,0); 
      lcd.print("waterlevel low starting refill");
      lcd.scrollDisplayLeft();   // scroll everything to the left by one position
-     lcd.setCursor(0, 1);
-     lcd.write(0);
-     tone(11, 500);delay(1);noTone(11);
+     
+     tone(11, 500);delay(1);noTone(11); 
      setColor(255,0 ,0 );
      delay(100);
      angle=90 ;
@@ -87,7 +60,6 @@ void loop()
      lcd.setCursor(2,0); 
      lcd.print("waterlevel: ");lcd.print(waterlevel);
      lcd.scrollDisplayLeft();   // scroll everything to the left by one position
-     lcd.write(1);
      delay(100); 
      angle=0;
     

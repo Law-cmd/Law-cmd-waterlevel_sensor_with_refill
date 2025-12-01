@@ -1,6 +1,6 @@
 # Overview
 
-I have made a water level sensor with two way of alarming and a refill process.
+I have made a water level sensor with two ways of alarming and a refill process.
 
 Sensor funktion:[Explanatory video](https://www.youtube.com/shorts/WR1qh0_Rwd8)
 

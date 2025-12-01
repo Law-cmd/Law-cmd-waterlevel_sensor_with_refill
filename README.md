@@ -2,9 +2,8 @@
 
 I have made a water level sensor with two way of alarming and a refill process.
 
-[Explanatory video](https://www.youtube.com/shorts/WR1qh0_Rwd8)
+Sensor funktion:[Explanatory video](https://www.youtube.com/shorts/WR1qh0_Rwd8)
 
-[![Demo Video](https://www.youtube.com/shorts/WR1qh0_Rwd8)](https://www.youtube.com/shorts/WR1qh0_Rwd8)
 
 The data is displaced on an LCD diplay uisng I2C SLAVE modul.
 

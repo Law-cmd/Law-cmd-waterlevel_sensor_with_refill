@@ -1,16 +1,73 @@
-# Overview
+💧 Water Level Sensor Project
 
-I have made a water level sensor with two ways of alarming and a refill process.
+An Arduino‑based water level monitoring system with dual alarm modes and an automatic refill process.
 
-Sensor funktion:[Explanatory video](https://www.youtube.com/shorts/WR1qh0_Rwd8)
+🎥 Explanatory Video
+📖 Overview
 
+This project uses an Arduino Uno to measure and display water levels. It features:
 
-The data is displayed on an LCD diplay uisng an I2C SLAVE modul.
+    Visual alerts with LEDs
 
-I am using a Arduino Uno and for the programming Visual Studio Code.
-I have build this project using jumper wires and a simple Breadborad.
+    Audible alerts with a buzzer
 
-# Explanation:
-If the water level is too low the LED will BLink RED, the buzzer will buzz, the LCD will show a message and the reill process will start (servo opens a valve).
-If there is enough water then the LED will blink GREEN and The LCD will show the waterlevel.
+    Real‑time water level display on an LCD (I2C slave module)
+
+    Automatic refill using a servo‑controlled valve
+
+The prototype is built on a breadboard with jumper wires and programmed via Visual Studio Code.
+⚙️ How It Works
+
+    Low water level
+
+        🚨 LED blinks red
+
+        🔊 Buzzer sounds
+
+        📟 LCD shows a warning message
+
+        💦 Servo opens valve → refill starts
+
+    Sufficient water level
+
+        ✅ LED blinks green
+
+        📟 LCD shows the current water level
+
+🛠️ Components Used
+
+    Arduino Uno
+
+    LCD with I2C module
+
+    LEDs (Red & Green)
+
+    Buzzer
+
+    Servo motor (for valve control)
+
+    Breadboard + jumper wires
+
+🚀 Features
+
+    Real‑time monitoring of water levels
+
+    Dual alarm system (visual + audible)
+
+    Automatic refill process
+
+    Compact breadboard prototype
+
+    Easy to expand and customize
+
+📷 Demo
+
+Check out the working prototype in action: Explanatory Video
+🔮 Future Improvements
+
+    Add a mobile notification system (e.g., via WiFi module)
+
+    Implement precise water level measurement with sensors
+
+    Optimize power consumption for long‑term use
 

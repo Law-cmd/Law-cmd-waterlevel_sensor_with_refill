@@ -1,3 +1,10 @@
+// TODO Fileheader fehlt
+// TODO Flussdiagramm fehlt
+// Was denken Sie über die Korrekturen Ihres Kollegen?
+// TODO README - Code entfernen - nur die Beschreibung was es braucht -> Code sieht man dann eh im SRC Folder
+// Kein separates Unterverzeichnis benötigt - habe ich bereits entfernt - befindet sich jetzt im Hauptverzeichnis des Repos
+// Freue mich schon auf die Livedemo!
+
 #include <Arduino.h>
 #include <Servo.h>
 #include <LiquidCrystal_I2C.h>
@@ -5,12 +12,11 @@
 #define sensorPower 7  // watersensor
 
 Servo servo;
-int angle; // servo
+int angle; // servo     // TODO statt dem Kommentar nennen Sie die Variable gleich eindeutig
 
-/* funktionen */
+/* Prototype functions */
 int readSensor();
 void setColor(int, int, int);
-/* funktionen */
 
 int redPin = 7;
 int greenPin = 6;
@@ -24,7 +30,7 @@ void setup()
   lcd.clear();
   lcd.backlight();
 
-  pinMode(A1, OUTPUT); // sensor
+  pinMode(A1, OUTPUT); // sensor		// TODO create const variables or #defines for the pin definitions (everywhere)
   pinMode(11, OUTPUT); // piezo
 
   servo.attach(8);

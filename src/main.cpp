@@ -1,18 +1,25 @@
-// TODO Fileheader fehlt
-// TODO Flussdiagramm fehlt
-// Was denken Sie über die Korrekturen Ihres Kollegen?
-// TODO README - Code entfernen - nur die Beschreibung was es braucht -> Code sieht man dann eh im SRC Folder
-// Kein separates Unterverzeichnis benötigt - habe ich bereits entfernt - befindet sich jetzt im Hauptverzeichnis des Repos
-// Freue mich schon auf die Livedemo!
-
+/*
+ * File:           main.cpp
+ * Autor:          Ahmad Ali 
+ * Datum:          2025-12-15
+ * Version:        2.3V
+ * Lizenz:         MIT
+ * 
+ * Beschreibung: If the water level is too low the LED will BLink RED, the buzzer will buzz,
+ *  the LCD will show a message and the reill process will start (servo opens a valve). 
+ * If there is enough water then the LED will blink GREEN and The LCD will show the waterlevel.
+ */
 #include <Arduino.h>
 #include <Servo.h>
 #include <LiquidCrystal_I2C.h>
 
-#define sensorPower 7  // watersensor
+#define sensorPower 7  
+#define sensor A1
+#define piezo 11  
+#define LCD_Adresse 0x27
 
 Servo servo;
-int angle; // servo     // TODO statt dem Kommentar nennen Sie die Variable gleich eindeutig
+int servo_angle; // servo    
 
 /* Prototype functions */
 int readSensor();
@@ -22,7 +29,7 @@ int redPin = 7;
 int greenPin = 6;
 int bluePin = 5;
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);  // set the LCD address to 0x3F for a 16 chars and 2 line display
+LiquidCrystal_I2C lcd(LCD_Adresse, 16, 2);  
 
 void setup() 
 {
@@ -30,11 +37,11 @@ void setup()
   lcd.clear();
   lcd.backlight();
 
-  pinMode(A1, OUTPUT); // sensor		// TODO create const variables or #defines for the pin definitions (everywhere)
-  pinMode(11, OUTPUT); // piezo
+  pinMode(sensor, OUTPUT); 		
+  pinMode(piezo, OUTPUT); 
 
   servo.attach(8);
-  servo.write(angle);
+  servo.write(servo_angle);
 
   digitalWrite(sensorPower, LOW);
   pinMode(redPin, OUTPUT);
@@ -59,7 +66,8 @@ void loop()
     setColor(255, 0, 0);
     delay(100);
 
-    angle = 90;
+    servo_angle = 90;
+
   }
   else
   {
@@ -71,10 +79,10 @@ void loop()
     lcd.scrollDisplayLeft();
     delay(100);
 
-    angle = 0;
+    servo_angle = 0;
   }
 
-  servo.write(angle);
+  servo.write(servo_angle);
 }
 
 void setColor(int redValue, int greenValue, int blueValue)

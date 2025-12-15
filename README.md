@@ -1,18 +1,8 @@
-#💧 Water Level Sensor Project
-
-An Arduino‑based water level monitoring system with dual alarm modes and an automatic refill process.
-
-###This project uses an Arduino Uno to measure and display water levels. It features:
-
-    Visual alerts with LEDs
-
-    Audible alerts with a buzzer
-
-    Real‑time water level display on an LCD (I2C slave module)
-
-    Automatic refill using a servo‑controlled valve
-
-###The prototype is built on a breadboard with jumper wires and programmed via Visual Studio Code.###
+💧 Water Level Sensor with Automatic Refill
+=================================
+📖 Overview
+-------------------------
+An Arduino‑based water level monitoring system with dual alarm modes and an automatic refill process. 🎥 Explanatory Video
 ⚙️ How It Works
 
     Low water level
@@ -31,8 +21,8 @@ An Arduino‑based water level monitoring system with dual alarm modes and an au
 
         📟 LCD shows the current water level
 
-###🛠️ Components Used
-
+🛠️ Components Used
+------------------------
     Arduino Uno
 
     LCD with I2C module
@@ -45,8 +35,8 @@ An Arduino‑based water level monitoring system with dual alarm modes and an au
 
     Breadboard + jumper wires
 
-###🚀 Features 
-
+🚀 Features
+-----------------------
     Real‑time monitoring of water levels
 
     Dual alarm system (visual + audible)
@@ -56,15 +46,3 @@ An Arduino‑based water level monitoring system with dual alarm modes and an au
     Compact breadboard prototype
 
     Easy to expand and customize
-
-###📷 Demo
-
-Check out the working prototype in action: Explanatory Video
-🔮 Future Improvements
-
-    Add a mobile notification system (e.g., via WiFi module)
-
-    Implement precise water level measurement with sensors
-
-    Optimize power consumption for long‑term use
-

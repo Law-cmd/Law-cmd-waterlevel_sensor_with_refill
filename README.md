@@ -13,17 +13,4 @@ I have build this project using jumper wires and a simple Breadborad.
 # Explanation:
 If the water level is too low the LED will BLink RED, the buzzer will buzz, the LCD will show a message and the reill process will start (servo opens a valve).
 If there is enough water then the LED will blink GREEN and The LCD will show the waterlevel.
-# Setup
-lcd.init();
-lcd.clear();         
-lcd.backlight();   
 
-pinMode(A1, OUTPUT);//sensor
-
-pinMode(11, OUTPUT);//piezo
-
-servo.attach(8);
-servo.write(angle);
-
-digitalWrite(sensorPower, LOW);
-pinMode(redPin, OUTPUT); pinMode(greenPin, OUTPUT); pinMode(bluePin, OUTPUT);
